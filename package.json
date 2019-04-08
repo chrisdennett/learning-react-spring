@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rmwc/switch": "^5.2.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-spring": "^8.0.19",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "react-scripts": "2.1.8"
