@@ -3,19 +3,21 @@ import { useSpring, animated } from "react-spring";
 
 const Example5 = ({ toggleOn = true }) => {
   const props = useSpring({ to: { value: toggleOn ? 100 : 0 } });
+
   const AnimatedClassDonut = animated(ClassDonut);
+  const percent = props.value.interpolate(x => 156 * (x / 100));
 
   return (
     <div>
-      <AnimatedClassDonut percent={props.value} />
-      <FunctionDonut percent={props.value} />
+      {/* <BrokenDonut percent={percent} /> */}
+      <AnimatedClassDonut percent={percent} />
+      <FunctionalDonut percent={percent} />
     </div>
   );
 };
 
 export default Example5;
 
-// ClassDonut
 class ClassDonut extends React.Component {
   render() {
     return (
@@ -26,7 +28,7 @@ class ClassDonut extends React.Component {
           stroke="rgb(45, 55, 71)"
           strokeLinecap="round"
           strokeDasharray={156}
-          strokeDashoffset={156 * (this.props.percent / 100)}
+          strokeDashoffset={this.props.percent}
           cx="25.5"
           cy="25.5"
           r="24.5"
@@ -36,8 +38,7 @@ class ClassDonut extends React.Component {
   }
 }
 
-// FunctionDonut
-const FunctionDonut = ({ percent }) => {
+const FunctionalDonut = ({ percent }) => {
   return (
     <svg viewBox="0 0 51 51" style={{ width: 80, height: 80 }}>
       <animated.circle
@@ -46,7 +47,25 @@ const FunctionDonut = ({ percent }) => {
         stroke="rgb(45, 55, 71)"
         strokeLinecap="round"
         strokeDasharray={156}
-        strokeDashoffset={percent.interpolate(p => 156 * (p / 100))}
+        strokeDashoffset={percent}
+        cx="25.5"
+        cy="25.5"
+        r="24.5"
+      />
+    </svg>
+  );
+};
+
+const BrokenDonut = ({ percent }) => {
+  return (
+    <svg viewBox="0 0 51 51" style={{ width: 80, height: 80 }}>
+      <circle
+        strokeWidth="2.5"
+        fill="white"
+        stroke="rgb(45, 55, 71)"
+        strokeLinecap="round"
+        strokeDasharray={156}
+        strokeDashoffset={156 * (percent / 100)}
         cx="25.5"
         cy="25.5"
         r="24.5"

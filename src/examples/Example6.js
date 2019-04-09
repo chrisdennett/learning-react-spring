@@ -20,17 +20,8 @@ const Example6 = ({ toggleOn = true }) => {
 
   const props = useSpring({ to: toggleOn ? startProps : endProps });
 
-  const textStyle = { fontSize: 42, fontWeight: "bold" };
-
   return (
     <div>
-      <h2>Displaying the prop as text</h2>
-      <p>
-        It took me an age to realise this with my blunt trail and error method
-        of learning. You can only used animated props directly in an animated
-        element.
-      </p>
-
       <animated.div style={{ ...props, ...staticStyles }}>
         {props.color}
       </animated.div>
@@ -41,6 +32,7 @@ const Example6 = ({ toggleOn = true }) => {
         })}
       </animated.div>
 
+      {/* Wrap any animaged values with the animated template */}
       <animated.div style={{ ...props, ...staticStyles }}>
         <div>
           color: <animated.span>{props.color}</animated.span>,
@@ -50,6 +42,7 @@ const Example6 = ({ toggleOn = true }) => {
         </div>
       </animated.div>
 
+      {/* Map through and display all props */}
       <animated.div style={{ ...props, ...staticStyles }}>
         {Object.keys(props).map(key => {
           return (

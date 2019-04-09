@@ -8,5 +8,10 @@ body {
 
 .app {
   max-width: 960px;
-  margin: 70px auto;
+  margin: 70px auto 800px auto;
+}
+
+.mdc-switch {
+  margin-right: 10px;
+  vertical-align: middle;
 }
