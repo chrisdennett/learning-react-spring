@@ -15,6 +15,7 @@ import Example9 from "./examples/Example9";
 import Example10 from "./examples/Example10";
 import Example11 from "./examples/Example11";
 import Example12 from "./examples/Example12";
+import Example13 from "./examples/Example13";
 import ExampleContainer from "./ExampleContainer";
 import FloatingToggle from "./components/FloatingToggle";
 
@@ -90,12 +91,7 @@ const App = () => {
 
       <Section>
         <SectionHeader>
-          <h2>
-            Part 2: Passing animated values to children{" "}
-            <a href="https://www.react-spring.io/docs/hooks/basics">
-              docs Basics section
-            </a>
-          </h2>
+          <h2>Part 2: Passing animated values to children</h2>
           <p>
             Until I got to the last one, these all felt pretty straight forward
             using the bits of the code shown in the docs and working out the
@@ -118,12 +114,7 @@ const App = () => {
           <Example6 toggleOn={toggleOn} />
         </ExampleContainer>
 
-        <h2>
-          Part 3: Colours{" "}
-          <a href="https://www.react-spring.io/docs/hooks/basics">
-            Playing with different colour types.
-          </a>
-        </h2>
+        <h2>Part 3: Colours</h2>
 
         <ExampleContainer title={"Example 7 - hsl"}>
           <p>
@@ -152,6 +143,21 @@ const App = () => {
 
         <ExampleContainer title={"Example 12 - Radial gradient"}>
           <Example12 toggleOn={toggleOn} />
+        </ExampleContainer>
+
+        <h2>Part 4: Grid Layout </h2>
+
+        <ExampleContainer title={"Example 13 - Grid Layout"}>
+          <p>
+            Wow, learning a lot in this one. As well as react-spring I'm
+            Learning about css grid layout for the first time and the awesome
+            Firefox grid inspector! (
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">
+              see Mozilla grid layout guide
+            </a>
+            )
+          </p>
+          <Example13 toggleOn={toggleOn} />
         </ExampleContainer>
       </Section>
     </div>

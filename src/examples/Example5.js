@@ -56,6 +56,7 @@ const FunctionalDonut = ({ percent }) => {
   );
 };
 
+/* 
 const BrokenDonut = ({ percent }) => {
   return (
     <svg viewBox="0 0 51 51" style={{ width: 80, height: 80 }}>
@@ -73,3 +74,4 @@ const BrokenDonut = ({ percent }) => {
     </svg>
   );
 };
+ */
