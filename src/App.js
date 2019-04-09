@@ -66,12 +66,14 @@ const App = () => {
           <Example2 toggleOn={toggleOn} />
         </ExampleContainer>
 
-        <ExampleContainer
-          title={"Example 3 - animated value as text"}
-          notes={
-            "This works fine, but if you add in other text it breaks.  See part 2 for more on this."
-          }
-        >
+        <ExampleContainer title={"Example 3 - animated value as text"}>
+          <p>
+            If you want to mix with other text you need to use interpolate (
+            <a href="https://twitter.com/artflychris/status/1115637329681633281">
+              thanks for the tip Paul
+            </a>
+            )
+          </p>
           <Example3 toggleOn={toggleOn} />
         </ExampleContainer>
 
