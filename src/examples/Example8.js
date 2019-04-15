@@ -26,5 +26,10 @@ const Example8 = ({ toggleOn = true }) => {
 export default Example8;
 
 const ColourBlock = styled.div`
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;

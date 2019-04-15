@@ -4,9 +4,9 @@ import styled from "styled-components";
 import "@material/switch/dist/mdc.switch.css";
 import { Switch } from "@rmwc/switch";
 
-const FloatingToggle = ({ onToggle, isToggled }) => {
+const FloatingToggle = ({ onToggle, isToggled, left = 10 }) => {
   return (
-    <ToggleContainer>
+    <ToggleContainer style={{ left }}>
       <Switch checked={isToggled} onChange={e => onToggle(e.target.checked)}>
         TOGGLE Springs
       </Switch>
@@ -18,6 +18,7 @@ export default FloatingToggle;
 
 const ToggleContainer = styled.div`
   position: fixed;
+  z-index: 1;
   top: 10px;
   left: 10px;
   background: #f1c40f;

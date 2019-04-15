@@ -7,8 +7,8 @@ body {
 }
 
 .app {
-  max-width: 960px;
-  margin: 70px auto 800px auto;
+  /* max-width: 960px; */
+  margin: 70px 0 800px 0;
 }
 
 .mdc-switch {

@@ -6,7 +6,7 @@ const Example13 = ({ toggleOn = true }) => {
   const cols1 = `1fr 3fr 1fr`;
   const cols2 = `3fr 3fr 3fr`;
   const rows1 = `1fr 6fr 1fr`;
-  const rows2 = `2fr 4fr 3fr`;
+  const rows2 = `3fr 3fr 3fr`;
 
   const props = useSpring({
     gridTemplateColumns: toggleOn ? cols1 : cols2,
@@ -30,8 +30,9 @@ export default Example13;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
   color: white;
+  width: 100%;
+  height: 100%;
 `;
 
 const Box1 = styled.div`
@@ -47,6 +48,7 @@ const Box1 = styled.div`
 const Box2 = styled.div`
   background: red;
   padding: 10px;
+  order: 4;
 `;
 
 const Box3 = styled.div`
@@ -57,6 +59,7 @@ const Box3 = styled.div`
 const Box4 = styled.div`
   background: green;
   padding: 10px;
+  order: 2;
 `;
 
 const Box5 = styled.div`

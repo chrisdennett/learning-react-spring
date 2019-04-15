@@ -27,7 +27,12 @@ const Example7 = ({ toggleOn = true }) => {
 export default Example7;
 
 const ColourBlock = styled.div`
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;
 
 function randInt(min = 0, max = 100) {

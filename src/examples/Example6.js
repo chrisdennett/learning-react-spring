@@ -3,7 +3,7 @@ import { useSpring, animated, interpolate } from "react-spring";
 
 const Example6 = ({ toggleOn = true }) => {
   const staticStyles = {
-    padding: 10,
+    padding: 2,
     marginTop: 10,
     borderRadius: 6,
     textAlign: "center"
@@ -38,7 +38,7 @@ const Example6 = ({ toggleOn = true }) => {
           color: <animated.span>{props.color}</animated.span>,
         </div>
         <div>
-          background: <animated.span>{props.background}</animated.span>
+          bg: <animated.span>{props.background}</animated.span>
         </div>
       </animated.div>
 
