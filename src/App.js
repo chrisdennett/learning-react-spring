@@ -43,10 +43,9 @@ const App = () => {
               on!
             </li>
             <li>
-              I'm a newbie with "react-spring" and I'm also just stating to
-              learn "styled-components", "react-markdown",
-              "react-syntax-highlighter" and "css grid" so my code may contain
-              badness!
+              I'm trying out lots of new things here: "react-spring",
+              "styled-components", "react-markdown", "react-syntax-highlighter"
+              and "css grid". So beware - my code may contain badness!
             </li>
           </ul>
         </Header>
