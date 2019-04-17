@@ -38,6 +38,7 @@ export const examplesData = [
   {
     number: 4,
     Comp: Example4,
+    code: eg4Md,
     title: "scroll",
     notes:
       "The amount I'm scrolling is a fudge - just tried different values until it hit the bottom at an ok speed! Need to work out how to scroll to dynamic points e.g. headings etc."
@@ -45,13 +46,15 @@ export const examplesData = [
   {
     number: 5,
     Comp: Example5,
-    title: "",
+    code: eg5Md,
+    title: "animating children",
     notes:
       "I had problems with this one.  To pass animated props into a child component you either need that child to be a class component, or you use animated within that child."
   },
   {
     number: 6,
     Comp: Example6,
+    code: eg6Md,
     title: "passing animated values to child components",
     notes:
       "I finally figured out that you can use as many children as you like but if they display animated values they need to use the animated.[element] syntax.  Perhaps this should have been obvious, but I kinda thought child elements would somehow inherit animated values."
@@ -59,6 +62,7 @@ export const examplesData = [
   {
     number: 7,
     Comp: Example7,
+    code: eg7Md,
     title: "colour - hsl",
     notes:
       "The spaces at the start and end of the brackets are intentional. If I remove them it seems to convert the colour to rgba which works fine, but is confusing for the text."
@@ -66,36 +70,42 @@ export const examplesData = [
   {
     number: 8,
     Comp: Example8,
+    code: eg8Md,
     title: "colour - rgb",
     notes: ""
   },
   {
     number: 9,
     Comp: Example9,
+    code: eg9Md,
     title: "linear gradient",
     notes: ""
   },
   {
     number: 10,
     Comp: Example10,
+    code: eg10Md,
     title: "diagonal gradient",
     notes: ""
   },
   {
     number: 11,
     Comp: Example11,
+    code: eg11Md,
     title: "three colour gradient",
     notes: ""
   },
   {
     number: 12,
     Comp: Example12,
+    code: eg12Md,
     title: "Radial gradient",
     notes: ""
   },
   {
     number: 13,
     Comp: Example13,
+    code: eg13Md,
     title: "Grid Layout",
     notes:
       "Wow, learning a lot in this one. As well as react-spring I'm Learning about css grid layout for the first time and the awesome Firefox grid inspector! [(see Mozilla grid layout guide)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)"

@@ -9,7 +9,7 @@ const CodeBlock = ({ language = "jsx", value }) => {
         language={language}
         style={atomDark}
         showLineNumbers={false}
-        customStyle={{ margin: 0, borderRadius: 0 }}
+        customStyle={{ margin: 0, borderRadius: 0, maxHeight: 250 }}
       >
         {value}
       </SyntaxHighlighter>

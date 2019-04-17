@@ -2,13 +2,47 @@ import React from "react";
 import styled from "styled-components";
 // comps
 import Toggle from "./Toggle";
+import AnimationTimer from "./AnimationTimer";
 
-const AppBar = ({ showCodeChange, showNotesChange, showNotes, showCode }) => {
+const AppBar = ({
+  showCodeChange,
+  showNotesChange,
+  toggleChange,
+  toggleListView,
+  listView,
+  animConfig,
+  toggleOn,
+  showNotes,
+  showCode
+}) => {
   return (
     <AppBarOuter>
-      <Label>SHOW:</Label>
-      <Toggle label={"notes"} onToggle={showNotesChange} isOn={showNotes} />
-      <Toggle label={"code"} onToggle={showCodeChange} isOn={showCode} />
+      <div>
+        <Toggle
+          label={"notes"}
+          onToggle={showNotesChange}
+          isOn={showNotes}
+          style={{ marginRight: 10 }}
+        />
+        <Toggle label={"code"} onToggle={showCodeChange} isOn={showCode} />
+      </div>
+
+      <div>
+        <AnimationTimer
+          animConfig={animConfig}
+          toggleOn={toggleOn}
+          toggleChange={toggleChange}
+        />
+      </div>
+
+      <div>
+        <Toggle icon={"view_list"} onToggle={toggleListView} isOn={listView} />
+        <Toggle
+          icon={"view_module"}
+          onToggle={value => toggleListView(!value)}
+          isOn={!listView}
+        />
+      </div>
     </AppBarOuter>
   );
 };
@@ -27,9 +61,10 @@ const AppBarOuter = styled.div`
     0 1px 10px 0 rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const Label = styled.div`
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.2);
   margin: 5px;
 `;

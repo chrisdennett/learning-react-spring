@@ -5,9 +5,15 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "./CodeBlock";
 import { examplesData } from "./examples-data";
 
-const ExampleList = ({ showCode, showNotes, toggleOn, config }) => {
+const ExampleList = ({
+  showCode,
+  showNotes,
+  toggleOn,
+  config,
+  listView = false
+}) => {
   return (
-    <ExamplesListOuter showCode={showCode}>
+    <ExamplesListOuter showCode={showCode} listView={listView}>
       {examplesData.map(eg => {
         const { title, Comp, number, notes, code } = eg;
         return (
@@ -41,10 +47,10 @@ const ExamplesListOuter = styled.div`
   display: grid;
 
   grid-gap: 8px;
-  row-gap: ${props => (props.showCode ? "80px" : "30px")};
+  row-gap: ${props => (props.listView ? "80px" : "30px")};
 
   grid-template-columns: ${props =>
-    props.showCode
+    props.listView
       ? "repeat(auto-fill, minmax(100%, 1fr))"
       : "repeat(auto-fill, minmax(250px, 1fr))"};
 
@@ -54,7 +60,7 @@ const ExamplesListOuter = styled.div`
 const ExampleCell = styled.div`
   display: grid;
   grid-template-columns: 3;
-  grid-template-rows: 250px 35px auto auto;
+  grid-template-rows: 250px auto auto auto;
   position: relative;
 `;
 
