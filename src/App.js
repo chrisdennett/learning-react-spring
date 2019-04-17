@@ -30,31 +30,35 @@ const App = () => {
         showNotesChange={value => setShowNotes(value)}
       />
 
-      <Header>
-        <h1>Learning react-spring</h1>
-        <ul>
-          <li>
-            These are my experiments / notes while getting to grips with
-            react-spring.
-          </li>
-          <li>
-            Writing this up is my way of getting my head round what's going on!
-          </li>
-          <li>
-            I'm a newbie with "react-spring" and I'm also just stating to learn
-            "styled-components", "react-markdown", "react-syntax-highlighter"
-            and "css grid" so my code may contain badness!
-          </li>
-        </ul>
-      </Header>
+      <div className={"main"}>
+        <Header>
+          <h1>Learning react-spring</h1>
+          <ul>
+            <li>
+              These are my experiments / notes while getting to grips with
+              react-spring.
+            </li>
+            <li>
+              Writing this up is my way of getting my head round what's going
+              on!
+            </li>
+            <li>
+              I'm a newbie with "react-spring" and I'm also just stating to
+              learn "styled-components", "react-markdown",
+              "react-syntax-highlighter" and "css grid" so my code may contain
+              badness!
+            </li>
+          </ul>
+        </Header>
 
-      <ExampleList
-        listView={listView}
-        toggleOn={toggleOn}
-        showCode={showCode}
-        showNotes={showNotes}
-        config={animConfig}
-      />
+        <ExampleList
+          listView={listView}
+          toggleOn={toggleOn}
+          showCode={showCode}
+          showNotes={showNotes}
+          config={animConfig}
+        />
+      </div>
 
       <Credits />
     </div>
