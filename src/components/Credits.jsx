@@ -1,8 +1,9 @@
 import React from "react";
+import styled from "styled-components";
 
 const Credits = () => {
   return (
-    <div>
+    <Outer>
       <h1>Credits</h1>
       <p>
         I always mean to include a list of all the various tools and things I've
@@ -18,11 +19,15 @@ const Credits = () => {
           );
         })}
       </ul>
-    </div>
+    </Outer>
   );
 };
 
 export default Credits;
+
+const Outer = styled.div`
+  background: #111111;
+`;
 
 const creditsData = [
   { title: "React" },

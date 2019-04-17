@@ -3,15 +3,32 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
 const AnimationTimer = ({ toggleOn, toggleChange, animConfig }) => {
+  const svgHeight = 24;
+  const svgWidth = 4;
+  const barHeight = 2;
+  const bottomBarPos = svgHeight - barHeight;
+
   const props = useSpring({
-    opacity: toggleOn ? 1 : 0,
+    y: toggleOn ? 0 : bottomBarPos,
     delay: 200,
     config: animConfig,
     onRest: () => toggleChange(!toggleOn)
   });
 
   return (
-    <div>{/* <animated.div style={props}>I will fade in</animated.div> */}</div>
+    <svg
+      width={svgWidth}
+      height={svgHeight}
+      style={{ border: "001px solid rgba(255,255,255,0.2)" }}
+    >
+      <animated.rect
+        fill={"white"}
+        y={props.y}
+        x={0}
+        width={"100%"}
+        height={barHeight}
+      />
+    </svg>
   );
 };
 
