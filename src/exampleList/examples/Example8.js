@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { randInt } from "../../UTILS.js";
 
-const Example8 = ({ toggleOn = true }) => {
+const Example8 = ({ toggleOn, config }) => {
   const r = randInt(0, 255);
   const g = randInt(0, 255);
   const b = randInt(0, 255);
@@ -13,7 +13,11 @@ const Example8 = ({ toggleOn = true }) => {
   // with an alpha of 1
   const bg = `rgb( ${r}, ${g}, ${b} )`;
 
-  const props = useSpring({ background: bg, color: colour });
+  const props = useSpring({
+    background: bg,
+    color: colour,
+    config
+  });
   const AnimatedColourBlock = animated(ColourBlock);
 
   return (

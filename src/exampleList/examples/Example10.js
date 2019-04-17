@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { randInt } from "../../UTILS.js";
 
-const Example10 = ({ toggleOn = true }) => {
+const Example10 = ({ toggleOn, config }) => {
   const r1 = randInt(0, 255);
   const g1 = randInt(0, 255);
   const b1 = randInt(0, 255);
@@ -16,7 +16,11 @@ const Example10 = ({ toggleOn = true }) => {
   // to avoid lots of near blacks and near whites (boring)
   const bg = `linear-gradient(to bottom right,  rgb( ${r1}, ${g1}, ${b1} ), rgb( ${r2}, ${g2}, ${b2} ) )`;
 
-  const props = useSpring({ backgroundImage: bg, color: colour });
+  const props = useSpring({
+    backgroundImage: bg,
+    color: colour,
+    config
+  });
   const AnimatedColourBlock = animated(ColourBlock);
 
   return (

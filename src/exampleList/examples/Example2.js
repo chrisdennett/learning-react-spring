@@ -1,8 +1,11 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-const Example2 = ({ toggleOn = true }) => {
-  const props = useSpring({ to: { x: toggleOn ? 0 : 100 } });
+const Example2 = ({ toggleOn, config }) => {
+  const props = useSpring({
+    to: { x: toggleOn ? 0 : 100 },
+    config
+  });
 
   return (
     <svg width={80} height={80} viewBox={`0 0 24 24`}>

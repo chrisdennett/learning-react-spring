@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "./CodeBlock";
 import { examplesData } from "./examples-data";
 
-const ExampleList = ({ showCode, toggleOn }) => {
+const ExampleList = ({ showCode, showNotes, toggleOn, config }) => {
   return (
     <ExamplesListOuter showCode={showCode}>
       {examplesData.map(eg => {
@@ -20,14 +20,14 @@ const ExampleList = ({ showCode, toggleOn }) => {
             </NumberCorner>
 
             <Example>
-              <Comp toggleOn={toggleOn} />
+              <Comp toggleOn={toggleOn} config={config} />
             </Example>
 
             <ExampleTitle>{title}</ExampleTitle>
 
-            {notes && <ReactMarkdown>{notes}</ReactMarkdown>}
-
             {code && showCode && <CodeBlock value={code} />}
+
+            {showNotes && <ReactMarkdown>{`NOTES: ${notes}`}</ReactMarkdown>}
           </ExampleCell>
         );
       })}

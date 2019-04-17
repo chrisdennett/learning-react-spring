@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 // styles
 import "./app_styles.css";
 // comps
@@ -11,12 +12,29 @@ import ExampleList from "./exampleList/ExampleList";
 const App = () => {
   const [toggleOn, setToggleOn] = useState(true);
   const [showCode, setShowCode] = useState(false);
+  const [showNotes, setShowNotes] = useState(false);
+
+  const animConfig = { ...config.slow };
+
+  const props = useSpring({
+    opacity: toggleOn ? 1 : 0,
+    delay: 200,
+    config: animConfig,
+    onRest: () => setToggleOn(!toggleOn)
+  });
 
   return (
     <div className="app">
-      <AppBar />
+      <AppBar
+        showCode={showCode}
+        showNotes={showNotes}
+        showCodeChange={show => setShowCode(show)}
+        showNotesChange={show => setShowNotes(show)}
+      />
 
-      <FloatingToggle
+      <animated.div style={props}>I will fade in</animated.div>
+
+      {/* <FloatingToggle
         isToggled={toggleOn}
         onToggle={isOn => setToggleOn(isOn)}
       />
@@ -25,7 +43,7 @@ const App = () => {
         left={200}
         isToggled={showCode}
         onToggle={isOn => setShowCode(isOn)}
-      />
+      /> */}
 
       <Header>
         <h1>Learning react-spring</h1>
@@ -35,7 +53,12 @@ const App = () => {
         </p>
       </Header>
 
-      <ExampleList toggleOn={toggleOn} showCode={showCode} />
+      <ExampleList
+        toggleOn={toggleOn}
+        showCode={showCode}
+        showNotes={showNotes}
+        config={animConfig}
+      />
 
       <Credits />
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSpring, animated, interpolate } from "react-spring";
 
-const Example6 = ({ toggleOn = true }) => {
+const Example6 = ({ toggleOn, config }) => {
   const staticStyles = {
     padding: 2,
     marginTop: 10,
@@ -18,7 +18,10 @@ const Example6 = ({ toggleOn = true }) => {
     color: "white"
   };
 
-  const props = useSpring({ to: toggleOn ? startProps : endProps });
+  const props = useSpring({
+    to: toggleOn ? startProps : endProps,
+    config
+  });
 
   return (
     <div>

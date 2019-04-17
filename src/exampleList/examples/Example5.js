@@ -1,8 +1,11 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-const Example5 = ({ toggleOn = true }) => {
-  const props = useSpring({ to: { value: toggleOn ? 100 : 0 } });
+const Example5 = ({ toggleOn, cofig }) => {
+  const props = useSpring({
+    to: { value: toggleOn ? 100 : 0 },
+    cofig
+  });
 
   const AnimatedClassDonut = animated(ClassDonut);
   const percent = props.value.interpolate(x => 156 * (x / 100));
@@ -18,6 +21,7 @@ const Example5 = ({ toggleOn = true }) => {
 
 export default Example5;
 
+// if using a class component, it doesn't need the "animated" component
 class ClassDonut extends React.Component {
   render() {
     return (
@@ -57,6 +61,7 @@ const FunctionalDonut = ({ percent }) => {
 };
 
 /* 
+// this doesn't work because it doesn't use the animated component
 const BrokenDonut = ({ percent }) => {
   return (
     <svg viewBox="0 0 51 51" style={{ width: 80, height: 80 }}>

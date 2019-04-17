@@ -1,8 +1,11 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-const Example4 = ({ toggleOn = true }) => {
-  const props = useSpring({ to: { scroll: toggleOn ? 0 : 310 } });
+const Example4 = ({ toggleOn, config }) => {
+  const props = useSpring({
+    to: { scroll: toggleOn ? 0 : 330 },
+    config
+  });
 
   return (
     <animated.div scrollTop={props.scroll} style={containerStyle}>

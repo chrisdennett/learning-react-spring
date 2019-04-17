@@ -5,13 +5,10 @@ import "@material/icon-button/dist/mdc.icon-button.css";
 import { IconButton } from "@rmwc/icon-button";
 
 const Toggle = ({ icon, onToggle, isOn = true, label }) => {
-  console.log("label: ", label);
-
   return (
-    <ToggleOuter isOn={isOn}>
+    <ToggleOuter isOn={isOn} onClick={() => onToggle(!isOn)}>
       <ToggleContent>
         {icon && <IconButton icon={icon} label="Rate this!" />}
-
         {label && <span>{label.toUpperCase()}</span>}
       </ToggleContent>
     </ToggleOuter>
@@ -28,9 +25,9 @@ const ToggleOuter = styled.div`
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => (props.isOn ? lightColour : darkColour)};
-  background: ${props => (props.isOn ? darkColour : "none")};
-  color: ${props => (props.isOn ? lightColour : darkColour)};
+  border-color: ${props => (props.isOn ? darkColour : lightColour)};
+  background: ${props => (props.isOn ? lightColour : darkColour)};
+  color: ${props => (props.isOn ? darkColour : lightColour)};
   min-width: 48px;
   padding: 8px;
   display: inline-flex;

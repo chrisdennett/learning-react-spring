@@ -3,12 +3,12 @@ import styled from "styled-components";
 // comps
 import Toggle from "./Toggle";
 
-const AppBar = () => {
+const AppBar = ({ showCodeChange, showNotesChange, showNotes, showCode }) => {
   return (
     <AppBarOuter>
       <Label>SHOW:</Label>
-      <Toggle label={"notes"} />
-      <Toggle label={"code"} />
+      <Toggle label={"notes"} onToggle={showNotesChange} isOn={showNotes} />
+      <Toggle label={"code"} onToggle={showCodeChange} isOn={showCode} />
     </AppBarOuter>
   );
 };

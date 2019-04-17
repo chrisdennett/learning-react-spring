@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
-const Example7 = ({ toggleOn = true }) => {
+const Example7 = ({ toggleOn, config }) => {
   const lightness = randInt(10, 80);
   // make the text visible on the background
   const colour = lightness > 50 ? "black" : "white";
@@ -14,7 +14,11 @@ const Example7 = ({ toggleOn = true }) => {
       ${lightness}%
       )`;
 
-  const props = useSpring({ background: bg, color: colour });
+  const props = useSpring({
+    background: bg,
+    color: colour,
+    config
+  });
   const AnimatedColourBlock = animated(ColourBlock);
 
   return (

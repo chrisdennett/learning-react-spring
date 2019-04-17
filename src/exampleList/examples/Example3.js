@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
-const Example3 = ({ toggleOn = true }) => {
-  const props = useSpring({ to: { number: toggleOn ? 1 : 0 } });
+const Example3 = ({ toggleOn, cofig }) => {
+  const props = useSpring({
+    to: { number: toggleOn ? 1 : 0 },
+    cofig
+  });
   const textStyle = { fontSize: 24, fontWeight: "bold" };
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
-const Example13 = ({ toggleOn = true }) => {
+const Example13 = ({ toggleOn, config }) => {
   const cols1 = `1fr 3fr 1fr`;
   const cols2 = `3fr 3fr 3fr`;
   const rows1 = `1fr 6fr 1fr`;
@@ -10,7 +10,8 @@ const Example13 = ({ toggleOn = true }) => {
 
   const props = useSpring({
     gridTemplateColumns: toggleOn ? cols1 : cols2,
-    gridTemplateRows: toggleOn ? rows1 : rows2
+    gridTemplateRows: toggleOn ? rows1 : rows2,
+    config
   });
 
   const AnimatedGrid = animated(Grid);
