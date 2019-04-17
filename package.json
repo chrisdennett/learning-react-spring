@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rmwc/icon": "^5.3.1",
+    "@rmwc/icon-button": "^5.3.1",
     "@rmwc/switch": "^5.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

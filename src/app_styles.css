@@ -1,14 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
+
 body {
   margin: 0;
   padding: 0;
   background: #cccccc;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .app {
   /* max-width: 960px; */
   margin: 70px 0 800px 0;
+  padding: 2rem;
 }
 
 .mdc-switch {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
-import { randInt } from "../UTILS.js";
+import { randInt } from "../../UTILS.js";
 
 const Example8 = ({ toggleOn = true }) => {
   const r = randInt(0, 255);
