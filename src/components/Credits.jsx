@@ -1,24 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import ContactDeets from "./ContactDeets";
 
 const Credits = () => {
   return (
     <Outer>
-      <h1>Credits</h1>
-      <p>
-        I always mean to include a list of all the various tools and things I've
-        used in projects. I've not gone made with it and included every website
-        I've googled for an answer, but here are the key things I've used.
-      </p>
-      <CreditList>
-        {creditsData.map(credit => {
-          return (
-            <CreditItem key={credit.title} href={credit.url}>
-              <h2>{credit.title}</h2>
-            </CreditItem>
-          );
-        })}
-      </CreditList>
+      <Inner>
+        <Heading>Credits</Heading>
+        <p>
+          I always mean to include a list of all the various tools and things
+          I've used in projects. I've not gone made with it and included every
+          website I've googled for an answer, but here are the key things I've
+          used.
+        </p>
+
+        <CreditList>
+          {creditsData.map(credit => {
+            return (
+              <CreditItem key={credit.title} href={credit.url}>
+                <h2>{credit.title}</h2>
+              </CreditItem>
+            );
+          })}
+        </CreditList>
+
+        <Heading>Contact</Heading>
+        <ContactDeets />
+      </Inner>
     </Outer>
   );
 };
@@ -28,14 +36,26 @@ export default Credits;
 const Outer = styled.div`
   border-top: 1px solid black;
   margin-top: 60px;
-  padding: 20px 20px 160px 20px;
+  padding: 40px 20px 100px 20px;
   background: #303030;
   color: whitesmoke;
+  font-size: 18px;
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+`;
+
+const Inner = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
 `;
 
 const CreditList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
 `;
 
 const CreditItem = styled.a`
@@ -44,6 +64,7 @@ const CreditItem = styled.a`
 
   h2 {
     font-size: 18px;
+    margin: 0;
   }
 `;
 
